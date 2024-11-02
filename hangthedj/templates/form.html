@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 
-<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
 
 <style>
 
@@ -62,7 +62,7 @@
             <input type="file" name="feed" id="fileUpload" accept="image/png, image/jpeg" hidden>
         </div>
 
-
+        <input type="submit" class="form-submit-button" >
 
     </form>
 

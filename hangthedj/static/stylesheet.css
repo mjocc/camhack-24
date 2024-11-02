@@ -240,8 +240,8 @@ nav ul {
 
 .uploaded {
 
-  border: 2px solid #1d294b;
-    background-color: #1d294b32;
+  border: 2px solid #10a234;
+    background-color: #59da8fb5;
     height: auto;
 
     color: #eee;
@@ -272,4 +272,19 @@ nav ul {
   border: 1px solid #eee;
   border-radius: 1.5rem;
   text-shadow: none;
+}
+
+.circle {
+  width: 500px;
+  height: 500px;
+  line-height: 500px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  background-color: rgb(8, 42, 36);
+  align-items: center;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
