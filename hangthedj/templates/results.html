@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+
+<style>
+
+
+
+</style> 
+
+<html>
+    <title> Hang The DJ </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+   
+    <h1><img src="https://media.discordapp.net/attachments/1302229435742949486/1302272672507494460/Untitled_Artwork.png?ex=67278370&is=672631f0&hm=0fd8fc22f047d078aa4956a87878560b7826100a830951635bf17fea3333d972&=&format=webp&quality=lossless&width=990&height=700" width="25%">
+    </h1>
+   
+    
+<h3>{{result['name_1']}} & {{result['name_2']}}'s Compatibility Score</h3>
+<div class="circle" id="content">
+    <h1 class="resulttext">{{result['match_score']}}% </h1>
+    
+</div>
+
+
+
+
+    
+
+
+</body>
+
+</html>
