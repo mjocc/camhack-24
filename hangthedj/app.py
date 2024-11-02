@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, abort, request, render_template, redirect, url_for
 from dotenv import load_dotenv
 import os
 
@@ -11,13 +11,22 @@ app.secret_key = os.getenv("FLASK_SECRET_KEY")
 app.teardown_appcontext(close_db)
 
 
-@app.route("/testing")
-def testing():
+@app.route("/result/<uuid:result_id>")
+def result(result_id):
     db = get_db()
-    db.execute(
+    result = db.execute(
         "SELECT * FROM result WHERE uuid = ?",
-    )
-    return render_template("index copy.html")
+        (
+            str(
+                result_id,
+            ),
+        ),
+    ).fetchone()
+
+    if result is None:
+        abort(404)
+
+    return render_template("results.html", result=result)
 
 
 @app.route("/")
