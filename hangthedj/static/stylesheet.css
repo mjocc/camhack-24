@@ -1,0 +1,275 @@
+@import url("https://use.typekit.net/jcx2hnf.css");
+body {
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/032/333/566/original/digital-background-with-geometric-shapes-data-analysis-technology-network-connection-big-data-computer-technology-concept-seamless-loop-video.jpg);
+    font-family: "poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+   }
+
+   
+
+h1{
+    text-align: center;
+    font-family: "poppins", sans-serif;
+font-weight: 700;
+font-style: normal;
+    font-size: 50px ;
+    color: rgb(255, 255, 255);
+
+
+    
+}
+
+h3{
+    text-align: center;
+    font-family: "poppins", sans-serif;
+font-weight: 500;
+font-style: normal;
+    padding: 1%;
+    font-size: 25px ;
+    color: rgb(255, 255, 255);
+
+}
+
+img{
+    align-items: center;
+
+}
+
+
+   .maintext{
+    background-color: rgb(8, 42, 36);
+
+      padding:5%;
+  
+      margin: 10%;
+      margin-top: 1%;
+      margin-bottom: 5%;
+      font-size: 24px;
+
+      border-radius: 4rem;
+      transition: 0.5s;
+      border: 2px solid rgb(204, 250, 100);
+  
+  
+  }
+
+  
+.form-submit-button {
+    background: #c8ea0a;
+    color: #000000;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    text-shadow: none;
+   font-size: 24px;
+   padding: 1%;
+   padding-left: 5%;
+   padding-right: 5%;
+   transition: 0.5s;
+  
+    }
+    .form-submit-button:hover {
+    background: #7a9c59;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    text-shadow: none;
+  
+    }
+
+    
+  input[type=text] {
+    appearance: none;
+    border: none;
+    outline: none;
+    border-bottom: .2em solid #c8ea0a;
+    background: rgba(#c8ea0a, .2);
+    border-radius: .2em .2em 0 0;
+    padding: .4em;
+    color: #1d294b;
+    font-size: medium;
+    box-shadow: #1d294b;
+    transition: 0.75s;
+  }
+  input[type=text]:focus{
+    border-bottom: .2em solid #1d294b;
+    background: rgba(#1d294b, .2);
+
+  }
+
+  input[type=file] { 
+
+	display: none;
+	grid-auto-flow: column;
+	gap: .5em;
+	justify-items: center;
+	align-content: center;
+	color: #c8ea0a;
+	border: .2em solid #c8ea0a;
+	background: hsl(0 0 0/0);
+	padding: .85em 1.5em;
+	color: #c8ea0a;
+	border-radius: 2em;
+	transition: 0.5s;
+  width: 80%;
+
+}
+
+input[type=file]:hover{
+  background-color: #7a9c59;
+}
+
+input[type=file].uploaded{
+  background-color: #7a9c59;
+}
+
+em{
+  color: #4c566d;
+  font-size: 18px;
+}
+
+form{
+  display: table;
+}
+
+p     { display: table-row;  }
+
+label { 
+  display: table-cell; 
+  margin-right: 5%;
+  padding: 1%;
+  width: max-content;
+
+}
+
+input { display: block; 
+  margin-left: 10%;}
+
+.maintext img{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+#myMenu li a{
+  background: #c8ea0a;
+  color: #000000;
+  border: 1px solid #eee;
+  border-radius: 3rem;
+  text-shadow: none;
+ font-size: 50px;
+ padding: 0.5%;
+ padding-left: 5%;
+ padding-right: 5%;
+ transition: 0.5s;    
+ font-family: "poppins", sans-serif;
+ font-weight: 400;
+ text-decoration:none;
+
+}
+
+#myMenu li a:hover{
+  background: #7a9c59;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 1.5rem;
+  text-shadow: none;
+}
+
+  
+
+
+#nav a{
+  text-align: center;
+  text-decoration:none;
+
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  font-weight: 100;
+  text-decoration:none;
+}
+
+.buttontop{
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  }
+
+
+  
+  .drag-area {
+    border: 2px dashed #ccc;
+    border-radius: 1.5rem;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    transition: 0.3s;
+    width: 100%;
+    text-align: center;
+
+}
+
+.drag-area.hover {
+    background-color: #91adc5;
+}
+
+.drag-area p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.drag-area span {
+    color: #c8ea0a;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.uploaded {
+
+  border: 2px solid #1d294b;
+    background-color: #1d294b32;
+    height: auto;
+
+    color: #eee;
+}
+
+#copyAllBtn{
+  background: #1d294b;
+  color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 1.5rem;
+  text-shadow: none;
+ font-size: 24px;
+ padding: 0.5%;
+ padding-left: 5%;
+ padding-right: 5%;
+ transition: 0.5s;    
+ font-family: "poppins", sans-serif;
+ font-weight: 400;
+ text-decoration:none;
+ text-align: center;
+
+}
+
+
+#copyAllBtn:hover{
+  background: #7a9c59;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 1.5rem;
+  text-shadow: none;
+}
