@@ -1,6 +1,6 @@
 @import url("https://use.typekit.net/jcx2hnf.css");
 body {
-    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/032/333/566/original/digital-background-with-geometric-shapes-data-analysis-technology-network-connection-big-data-computer-technology-concept-seamless-loop-video.jpg);
+    background-image: url(/static/background.jpg);
     font-family: "poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -21,7 +21,11 @@ font-style: normal;
     
 }
 
-h3{
+h2 {
+  text-align: center;
+}
+
+h3 {
     text-align: center;
     font-family: "poppins", sans-serif;
 font-weight: 500;
@@ -35,6 +39,28 @@ font-style: normal;
 img{
     align-items: center;
 
+}
+
+img:hover{
+
+    animation: shake 3s; 
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 
@@ -55,18 +81,38 @@ img{
   
   }
 
-  
+.form-rows-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+}
+
+.form-row > label {
+  flex-shrink: 0;
+}
+
+.form-row > input {
+  width: 100%;
+}
+
 .form-submit-button {
     background: #c8ea0a;
+    font-family: "poppins", sans-serif;
     color: #000000;
     border: 1px solid #eee;
+    font-family: "poppins", sans-serif;
     border-radius: 20px;
     text-shadow: none;
    font-size: 24px;
-   padding: 1%;
-   padding-left: 5%;
-   padding-right: 5%;
+   padding: 2% 5%;
    transition: 0.5s;
+   width: 100%;
+   font-weight: 700;
   
     }
     .form-submit-button:hover {
@@ -75,6 +121,7 @@ img{
     border: 1px solid #eee;
     border-radius: 20px;
     text-shadow: none;
+    cursor: pointer;
   
     }
 
@@ -85,16 +132,17 @@ img{
     outline: none;
     border-bottom: .2em solid #c8ea0a;
     background: rgba(#c8ea0a, .2);
+    background-color: #7a9c5960;
     border-radius: .2em .2em 0 0;
-    padding: .4em;
-    color: #1d294b;
+    padding: .5em;
+    color: #ffffff;
     font-size: medium;
     box-shadow: #1d294b;
     transition: 0.75s;
   }
   input[type=text]:focus{
-    border-bottom: .2em solid #1d294b;
-    background: rgba(#1d294b, .2);
+    border-bottom: .2em solid #085e26;
+    background: rgba(#0c8a64, .2);
 
   }
 
@@ -129,12 +177,6 @@ em{
   font-size: 18px;
 }
 
-form{
-  display: table;
-}
-
-p     { display: table-row;  }
-
 label { 
   display: table-cell; 
   margin-right: 5%;
@@ -142,9 +184,6 @@ label {
   width: max-content;
 
 }
-
-input { display: block; 
-  margin-left: 10%;}
 
 .maintext img{
   object-fit: contain;
@@ -158,15 +197,15 @@ input { display: block;
   border: 1px solid #eee;
   border-radius: 3rem;
   text-shadow: none;
- font-size: 50px;
- padding: 0.5%;
- padding-left: 5%;
- padding-right: 5%;
- transition: 0.5s;    
- font-family: "poppins", sans-serif;
- font-weight: 400;
- text-decoration:none;
-
+  font-size: 50px;
+  padding: 0.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  transition: 0.5s;    
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  text-decoration:none;
+  padding-top: 17px;
 }
 
 #myMenu li a:hover{
@@ -211,7 +250,7 @@ nav ul {
   .drag-area {
     border: 2px dashed #ccc;
     border-radius: 1.5rem;
-    padding: 20px;
+    padding: 20px 0px;
     text-align: center;
     cursor: pointer;
     margin-top: 1rem;
@@ -277,14 +316,22 @@ nav ul {
 .circle {
   width: 500px;
   height: 500px;
-  line-height: 500px;
+  display: flex;
+  justify-content: center;
+  line-height: 400px;
   border-radius: 50%;
-  font-size: 50px;
   color: #fff;
   text-align: center;
-  background-color: rgb(8, 42, 36);
+  /* background-color: rgb(8, 42, 36);  */
+  background-image: url("https://i.pinimg.com/originals/1b/aa/e4/1baae4f66cc7274d2f9e76d66411aefe.gif");
   align-items: center;
-  max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  border: 15px solid rgb(204, 250, 100);
+  box-shadow: 0px 20px 20px #053a20;
+}
+
+.resulttext {
+  font-size: 90px;
+  
 }

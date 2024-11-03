@@ -10,61 +10,73 @@
 </style> 
 
 <html>
-    <title> Hang The DJ </title>
+    <title>Hang the DJ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png')}}" />
 </head>
 
 <body>
 
    
-    <h1><img src="https://media.discordapp.net/attachments/1302229435742949486/1302272672507494460/Untitled_Artwork.png?ex=67278370&is=672631f0&hm=0fd8fc22f047d078aa4956a87878560b7826100a830951635bf17fea3333d972&=&format=webp&quality=lossless&width=990&height=700" width="25%">
+    <h1 style="margin: 0">
+        <a href="{{url_for('home')}}">
+            <img src="{{ url_for('static', filename='logo.png')}}" width="30%">
+        </a>
     </h1>
    
-    
 
-<form id="calc" action="/submit" enctype="multipart/form-data" method="post" ></form>
-<h3>PERSON 1</h3>
-<div class="maintext" id="content">
-    
-        <p>
-        <label>NAME:</label> <input type="text" name="ID1">
-        </p>
+{% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+        <div class="maintext" style="padding: 2%; text-align: center;">{{ message }}</div>
+      {% endfor %}
+  {% endwith %}
 
-        <p>
-        <label>OCCUPATION/SUBJECT:</label> <input type="text" name="occupation1">
-        </p>
 
-    <p>
-        <label>UPLOAD SCREENSHOT: </label>
-        <div class="drag-area" id="dragArea">
-            <p id="dragAreaText">Drag & Drop your Image here or <span>Browse</span></p>
-            <input type="file" name="feed1" id="fileUpload" accept="image/png, image/jpeg" hidden>
+<form id="calc" enctype="multipart/form-data" method="post" >
+<div class="maintext">
+    <h2 style="padding: 0; margin: 0;">PERSON 1</h3>
+    <div class="form-rows-container">
+        <div class="form-row">
+        <label>NAME:</label> <input required type="text" name="ID1">
         </div>
-    </p>
+
+        <div class="form-row">
+        <label>OCCUPATION/SUBJECT:</label> <input required type="text" name="occupation1">
+        </div>
+
+        <label style="margin-top: 20px">UPLOAD SCREENSHOT OF INSTAGRAM PROFILE: </label>
+        <div class="drag-area" id="dragArea1" style="margin-top: 5px">
+            <p id="dragAreaText1">Drag & drop your image here or <span>browse</span></p>
+            <input required type="file" name="feed1" id="fileUpload1" accept="image/png, image/jpeg" hidden>
+        </div>
+    </div>
 </div>
 
-    <h3>PERSON 2</h3>
-    <div class="maintext" id="content">
-    
-        <p>
-        <label>NAME:</label> <input type="text" name="ID2">
-        </p>
-
-        <p>
-            <label>OCCUPATION/SUBJECT:</label> <input type="text" name="occupation2">
-            </p>
-
-    <p>
-        <label>UPLOAD SCREENSHOT: </label>
-        <div class="drag-area" id="dragArea">
-            <p id="dragAreaText">Drag & Drop your Image here or <span>Browse</span></p>
-            <input type="file" name="feed2" id="fileUpload" accept="image/png, image/jpeg" hidden>
+<div class="maintext">
+    <h2 style="padding: 0; margin: 0;">PERSON 2</h3>
+    <div class="form-rows-container">
+        <div class="form-row">
+        <label>NAME:</label> <input required type="text" name="ID2">
         </div>
 
-        <input type="submit" class="form-submit-button" >
+        <div class="form-row">
+        <label>OCCUPATION/SUBJECT:</label> <input required type="text" name="occupation2">
+        </div>
 
-    </form>
+        <label style="margin-top: 20px">UPLOAD SCREENSHOT OF INSTAGRAM PROFILE: </label>
+        <div class="drag-area" id="dragArea2" style="margin-top: 5px">
+            <p id="dragAreaText2">Drag & drop your image here or <span>browse</span></p>
+            <input required type="file" name="feed2" id="fileUpload2" accept="image/png, image/jpeg" hidden>
+        </div>
+    </div>
+</div>
+
+<div class="maintext" style="display: flex; justify-content: center;">
+    <button class="form-submit-button" >CALCULATE MATCH!</input>
+</div>
+
+</form>
 
 
     
@@ -74,45 +86,54 @@
 
 
 
-            const dragArea = document.getElementById('dragArea');
-            const fileInput = document.getElementById('fileUpload');
-            const dragAreaText = document.getElementById('dragAreaText');
+            let dragArea = document.getElementById('dragArea1');
+            let fileInput = document.getElementById('fileUpload1');
+            let dragAreaText = document.getElementById('dragAreaText1');
 
-            dragArea.addEventListener('click', () => {
-                fileInput.click();
-            });
+            applyEventListeners(dragArea, fileInput, dragAreaText);
 
-            fileInput.addEventListener('change', () => {
-                handleFiles(fileInput.files);
-            });
+            dragArea = document.getElementById('dragArea2');
+            fileInput = document.getElementById('fileUpload2');
+            dragAreaText = document.getElementById('dragAreaText2');
 
-            document.addEventListener('dragover', (event) => {
-                event.preventDefault();
-                dragArea.classList.add('hover');
-            });
+            applyEventListeners(dragArea, fileInput, dragAreaText);
 
-            document.addEventListener('dragleave', () => {
-                dragArea.classList.remove('hover');
-            });
+            function applyEventListeners(dragArea, fileInput, dragAreaText) {
+                dragArea.addEventListener('click', () => {
+                    fileInput.click();
+                });
 
-            document.addEventListener('drop', (event) => {
-                event.preventDefault();
-                dragArea.classList.remove('hover');
-                const files = event.dataTransfer.files;
-                handleFiles(files);
-            });
+                fileInput.addEventListener('change', () => {
+                    handleFiles(fileInput.files);
+                });
 
-            function handleFiles(files) {
-                if (files.length > 0 ) {
-                    fileInput.files = files;
-                    dragAreaText.textContent = `Uploaded: ${files[0].name}`; // Change the text to indicate successful upload
-                    dragArea.classList.add('uploaded');
-                } else {
-                    alert('Please upload a file.');
-                    dragArea.classList.remove('uploaded');
+                document.addEventListener('dragover', (event) => {
+                    event.preventDefault();
+                    dragArea.classList.add('hover');
+                });
+
+                document.addEventListener('dragleave', () => {
+                    dragArea.classList.remove('hover');
+                });
+
+                document.addEventListener('drop', (event) => {
+                    event.preventDefault();
+                    dragArea.classList.remove('hover');
+                    const files = event.dataTransfer.files;
+                    handleFiles(files);
+                });
+
+                function handleFiles(files) {
+                    if (files.length > 0 ) {
+                        fileInput.files = files;
+                        dragAreaText.textContent = `Uploaded: ${files[0].name}`; // Change the text to indicate successful upload
+                        dragArea.classList.add('uploaded');
+                    } else {
+                        alert('Please upload a file.');
+                        dragArea.classList.remove('uploaded');
+                    }
                 }
             }
-
 
 
     </script>

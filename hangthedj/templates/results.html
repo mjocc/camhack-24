@@ -10,29 +10,37 @@
 </style> 
 
 <html>
-    <title> Hang The DJ </title>
+    <title>Hang the DJ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png')}}" />
 </head>
 
 <body>
 
    
-    <h1><img src="https://media.discordapp.net/attachments/1302229435742949486/1302272672507494460/Untitled_Artwork.png?ex=67278370&is=672631f0&hm=0fd8fc22f047d078aa4956a87878560b7826100a830951635bf17fea3333d972&=&format=webp&quality=lossless&width=990&height=700" width="25%">
+    <h1 style="margin: 0">
+        <a href="{{url_for('home')}}">
+            <img src="{{ url_for('static', filename='logo.png')}}" width="30%">
+        </a>
     </h1>
    
     
-<h3>{{result['name_1']}} & {{result['name_2']}}'s Compatibility Score</h3>
+<h2>{{result['name_1']}} & {{result['name_2']}}'s Compatibility Score</h3>
 <div class="circle" id="content">
     <h1 class="resulttext">{{result['match_score']}}% </h1>
     
 </div>
 
+<div class="maintext">
+    <h2 style="padding: 0; margin: 0;">SCENARIO SCORES</h3>
+        <p>
+            Long hot car car 
+        </p>
+</div>
 
 
-
-    
-
+<button class="form-submit-button" style="margin: 50px; text-align: center; width:70%;" onclick="navigator.share({ url: window.location.href })">Share your result!</button>
 
 </body>
 

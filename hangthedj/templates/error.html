@@ -17,20 +17,35 @@
 </head>
 
 <body>
+
    
     <h1 style="margin: 0">
-        <img src="{{ url_for('static', filename='logo.png')}}" height="700" width="990">
+        <a href="{{url_for('home')}}">
+            <img src="{{ url_for('static', filename='logo.png')}}" width="30%">
+        </a>
     </h1>
+   
+    
+
+<div class="maintext" id="content">
+    <h1 > error {{status_code}} (sad)</h1>
+    
 
     <div class="buttontop">
         <nav>
             <ul id="myMenu">
-                  <b><li><a href="{{url_for('form')}}" id = "back">START</a></li></b>
+                  <b><li><a href="{{url_for('home')}}" id = "back">GO HOME</a></li></b>
 
               
             </ul>
         </nav>
     </div>
+</div>
+
+
+
+
+    
 
 
 </body>
