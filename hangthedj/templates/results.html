@@ -26,28 +26,28 @@
     </h1>
    
     
-<h2>{{result['name_1']}} & {{result['name_2']}}'s Compatibility Score</h3>
+<h3>{{result['name_1']}} & {{result['name_2']}}'s Compatibility Score</h3>
 <div class="circle" id="content">
-    <h1 class="resulttext">{{result['match_score']}}% </h1>
+    <h1 class="resulttext">{{result['match_score']|round}}% </h1>
     
 </div>
 
-<div class="maintext">
-    <h2 style="padding: 0; margin: 0;">SCENARIO SCORES</h3>
+<div class="maintext" >
+    <img src="https://cdn.discordapp.com/attachments/1302229435742949486/1302671944558186547/Untitled_Artwork.png?ex=6728f74a&is=6727a5ca&hm=82a468849899c72e02a02ebcc7b6de7402ecd7f9ff240a16dcc9fc8b3d3ed7f0&"> 
+    <h2 style="padding: 0; margin: 0;">SCENARIO SCORES</h2>
         <p>
-            Long hot car ride: {{}}
-            <br>First meeting: {{}}
-            <br>Assembling IKEA furniture: {{}}
-            <br>Drunk fight: {{}}
-            <br>Losing something valuable: {{}}
-            <br>Best friends for 10 years: {{}}
-            <br>Hanging out with other person's friends: {{}}
+            Long, hot car ride: &ensp;{{result["car_score"]|round}} %
+            <br>First meeting: &ensp;{{result["meeting_score"]|round}} %
+            <br>Assembling IKEA furniture: &ensp;{{result["ikea_score"]|round}} %
+            <br>Uh oh! A drunk fight: &ensp;{{result["fight_score"]|round}} %
+            <br>Losing something valuable: &ensp;{{result["losing_score"]|round}} %
+            <br>Married for 3 years: &ensp;{{result["marriage_score"]|round}} %
 
         </p>
 </div>
 
 
-<button class="form-submit-button" style="margin: 50px; text-align: center; width:70%;" onclick="navigator.share({ url: window.location.href })">Share your result!</button>
+<button class="form-submit-button" style="margin: 50px; text-align: center; width:90%;" onclick="navigator.share({ url: window.location.href })">Share your result!</button>
 
 </body>
 

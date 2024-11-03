@@ -36,13 +36,14 @@
 <form id="calc" enctype="multipart/form-data" method="post" >
 <div class="maintext">
     <h2 style="padding: 0; margin: 0;">PERSON 1</h3>
+
     <div class="form-rows-container">
         <div class="form-row">
         <label>NAME:</label> <input required type="text" name="ID1">
         </div>
 
         <div class="form-row">
-        <label>OCCUPATION/SUBJECT:</label> <input required type="text" name="occupation1">
+        <label>AREA OF INTEREST:</label> <input required type="text" name="occupation1">
         </div>
 
         <label style="margin-top: 20px">UPLOAD SCREENSHOT OF INSTAGRAM PROFILE: </label>
@@ -55,13 +56,14 @@
 
 <div class="maintext">
     <h2 style="padding: 0; margin: 0;">PERSON 2</h3>
+
     <div class="form-rows-container">
         <div class="form-row">
         <label>NAME:</label> <input required type="text" name="ID2">
         </div>
 
         <div class="form-row">
-        <label>OCCUPATION/SUBJECT:</label> <input required type="text" name="occupation2">
+        <label>AREA OF INTEREST:</label> <input required type="text" name="occupation2">
         </div>
 
         <label style="margin-top: 20px">UPLOAD SCREENSHOT OF INSTAGRAM PROFILE: </label>
@@ -72,8 +74,11 @@
     </div>
 </div>
 
-<div class="maintext" style="display: flex; justify-content: center;">
-    <button class="form-submit-button" >CALCULATE MATCH!</input>
+<div class="maintext" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <button id="form-submit" class="form-submit-button">
+    <img height=30 class="hidden" src="https://cdn.discordapp.com/attachments/1302229435742949486/1302678363797716992/Rolling.gif?ex=6728fd44&is=6727abc4&hm=6ae5ade752fe9009374543d331b1606dda95c48134958a427090698855739e06&" >
+        <div id="button-text" style="flex-shrink: 0;">CALCULATE MATCH!</div></button>
+       <em style="margin-top: 15px;"> Please note: there may be a short delay when submitting the form! </em>
 </div>
 
 </form>
@@ -107,16 +112,16 @@
                     handleFiles(fileInput.files);
                 });
 
-                document.addEventListener('dragover', (event) => {
+                dragArea.addEventListener('dragover', (event) => {
                     event.preventDefault();
                     dragArea.classList.add('hover');
                 });
 
-                document.addEventListener('dragleave', () => {
+                dragArea.addEventListener('dragleave', () => {
                     dragArea.classList.remove('hover');
                 });
 
-                document.addEventListener('drop', (event) => {
+                dragArea.addEventListener('drop', (event) => {
                     event.preventDefault();
                     dragArea.classList.remove('hover');
                     const files = event.dataTransfer.files;

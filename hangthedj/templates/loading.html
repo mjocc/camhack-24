@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+
+
+
+</style> 
+
+<html>
+    <title>Hang the DJ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png')}}" />
+</head>
+
+<body>
+
+   
+    <h1 style="margin: 0">
+        <a href="{{url_for('home')}}">
+            <img src="{{ url_for('static', filename='logo.png')}}" width="30%">
+        </a>
+    </h1>
+   
+    
+<h3>Calculating {{result['name_1']}} & {{result['name_2']}}'s compatibility score. This may take a minute!</h3>
+<div class="circle" id="content">
+    <img src="https://cdn.discordapp.com/attachments/1302229435742949486/1302678363797716992/Rolling.gif?ex=6728fd44&is=6727abc4&hm=6ae5ade752fe9009374543d331b1606dda95c48134958a427090698855739e06&" >
+    
+</div>
+
+<div class="maintext" >
+    <h3>while you wait...</h3>
+    <h2 style="padding: 0; margin: 0;">AI CONVERSATION</h2>
+        <p class="aitext" id="ai-text-view"></p>
+        <p class="hidden" id="ai-text-1">{{result["loading_screen_1"]}}</p>
+        <p class="hidden" id="ai-text-2">{{result["loading_screen_2"]}}</p>
+</div>
+
+
+
+
+  
+
+
+</body>
+
+<script>
+    (async () => {
+    const id = window.location.pathname.split("/").filter(seg => seg != "").pop();
+    const response = await fetch(`/calculate-match/${id}`);
+    console.log(response);
+    window.location.replace(`/result/${id}`);
+    })();
+    window.addEventListener('load', function () {
+        const textView = document.getElementById("ai-text-view");
+        const ai1 = document.getElementById("ai-text-1").textContent;
+        const ai2 = document.getElementById("ai-text-2").textContent;
+        textView.innerHTML = marked.parse(ai1);
+        setTimeout(function () {
+            textView.innerHTML = marked.parse(ai2);
+        }, 60 * 1000);
+    });
+</script>
+
+</html>
